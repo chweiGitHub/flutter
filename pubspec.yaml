@@ -17,6 +17,11 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+#  custom_module:
+#    path: ./custom_module
+  custom_plugin:
+    path: ./custom_plugin
+
   flutter:
     sdk: flutter
 
