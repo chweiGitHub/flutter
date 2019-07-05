@@ -47,8 +47,22 @@ public class CustomPlugin implements MethodCallHandler {
             }
             Toast.makeText(mActivity, "test--" + call.argument("values").toString(), Toast.LENGTH_LONG).show();
             result.success(true);
+        } else if (call.method.equals("stringTest")) {
+
+
+            String x = new String("goeasyway");
+            change(x);
+            Log.i("---->", x);
+            result.success (true);
+
         } else {
             result.notImplemented();
         }
     }
+
+    public void change(String x) {
+        Log.i("----啊啊啊a>", x);
+        x = x+"--test11";
+    }
+
 }

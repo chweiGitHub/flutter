@@ -20,3 +20,13 @@ void showAndroidToast(String msg) {
     cPrint("$value");
   });
 }
+
+
+void testString( ) {
+  MethodChannel methodChannel = MethodChannel(channel);
+
+  // 调用原生的showToast方法，并传递复杂类型参数
+  methodChannel.invokeMethod<bool>("stringTest").then((value) {
+    cPrint("$value");
+  });
+}

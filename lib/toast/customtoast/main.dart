@@ -1,4 +1,6 @@
+import 'package:custom_plugin/tools.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/page/animation_demo1.dart';
 import 'package:flutter_app/toast/customtoast/global_context.dart';
 import 'package:flutter_app/toast/customtoast/page1.dart';
 
@@ -32,6 +34,8 @@ class _DemoState extends State<Demo> {
     Text("""
     Flutter是谷歌的移动UI框架，可以快速在iOS和Android上构建高质量的原生用户界面。 Flutter可以与现有的代码一起工作。在全世界，Flutter正在被越来越多的开发者和组织使用，并且Flutter是完全免费、开源的。
     """),
+
+//    Transform.translate(offset: Offset(100.0 * curve.value, 0.0), child: FlutterLogo(size: 100.0)),
   ];
 
   @override
@@ -50,8 +54,11 @@ class _DemoState extends State<Demo> {
       floatingActionButton: FloatingActionButton(onPressed: () {
 //        list.insert(0, list.removeAt(1));
 //        setState(() {});
+        testString();
+//        Navigator.of(context)
+//            .push(MaterialPageRoute(builder: (context) => Page1()));
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => Page1()));
+            .push(MaterialPageRoute(builder: (context) => AnimationPage03()));
       }),
     );
   }
