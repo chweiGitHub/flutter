@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/page/base_technology_page.dart';
 import 'package:flutter_app/page/me_page.dart';
 import 'package:flutter_app/page/widget_page.dart';
-import 'package:flutter_app/page/animation_demo1.dart';
+import 'package:flutter_app/animation/animation_demo1.dart';
 import 'package:flutter_app/widget/custom_notification.dart';
 import 'package:flutter_app/widget/dot_to_me_animation.dart';
 import 'package:flutter_app/widget/dot_to_me_animation_container.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -28,7 +29,7 @@ class _MainPage extends State<MainPage> with TickerProviderStateMixin {
   Offset _endOffset;
   Size _clickWidgetSize; // 被点击的widget的size
   Size _endWidgetSize; // 目标Widget的Size
-  List<Widget> dotViews = [];
+  List<Widget> _dotViews = [];
 
   // 动画相关  -- end
 
@@ -68,6 +69,10 @@ class _MainPage extends State<MainPage> with TickerProviderStateMixin {
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       // 页面渲染完成后获取到导航栏"我"widget的位置信息
+
+      ScreenUtil.instance = ScreenUtil(width: 375, height: 667)..init(context);
+
+
       RenderBox box = _meKey.currentContext.findRenderObject();
       _endOffset = box.localToGlobal(Offset.zero);
       _endWidgetSize = box.size;
@@ -122,7 +127,7 @@ class _MainPage extends State<MainPage> with TickerProviderStateMixin {
         setState(() {
           _startOffset = notification.startOffset;
           _clickWidgetSize = notification.size;
-          dotViews = [
+          _dotViews = [
             Container(
               decoration: BoxDecoration(
                 border: Border.all(
@@ -157,7 +162,12 @@ class _MainPage extends State<MainPage> with TickerProviderStateMixin {
               endOffset: _endOffset,
               startSize: _clickWidgetSize,
               endSize: _endWidgetSize,
-              children: dotViews,
+              children: _dotViews,
+              onComplete: (){
+                setState(() {
+                  _dotViews=[];
+                });
+              },
             ),
 
 //            Offstage(

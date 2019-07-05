@@ -1,6 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart';
 
+void main() {
+  return runApp(Main());
+}
+
+class Main extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      home: AnimationPage03(),
+    );
+  }
+}
+
+
 class AnimationPage03 extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {

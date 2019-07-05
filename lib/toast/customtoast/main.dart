@@ -1,6 +1,6 @@
 import 'package:custom_plugin/tools.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/page/animation_demo1.dart';
+import 'package:flutter_app/animation/animation_demo1.dart';
 import 'package:flutter_app/toast/customtoast/global_context.dart';
 import 'package:flutter_app/toast/customtoast/page1.dart';
 

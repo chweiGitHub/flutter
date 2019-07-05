@@ -6,9 +6,9 @@ import 'package:flutter_app/widget/size_button.dart';
 
 
 class ItemView extends StatefulWidget{
-  ItemView({Key key, this.value, this.onPress}):super(key : key);
+  ItemView({Key key, this.value, this.onPress, this.toSearchPage}):super(key : key);
 
-  String value ; Function onPress ;
+  String value ; Function onPress , toSearchPage;
 
   @override
   State<StatefulWidget> createState() {
@@ -42,6 +42,8 @@ class _ItemViewState extends State<ItemView>{
                 RenderBox box =  /*_key.currentContext*/context.findRenderObject();
                 Offset offset = box.localToGlobal(Offset.zero);
                 print("-======-----------------------------------------------------=======> ${offset.dx}---${offset.dy}-----");
+
+                widget.toSearchPage ();
                 //widget.onPress (offset.dx, offset.dy) ;
               },
             ),

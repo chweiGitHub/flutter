@@ -39,6 +39,7 @@ dependencies:
   # 渲染显示Markdown文件 https://pub.dev/packages/flutter_markdown#-installing-tab-
   flutter_markdown: ^0.2.0
   common_utils: ^1.1.1
+  flutter_screenutil: ^0.5.2
 
 dev_dependencies:
   flutter_test:
