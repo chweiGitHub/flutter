@@ -84,7 +84,7 @@ class _DotMoveItemViewState extends State<DotMoveItemView>
     _controller = AnimationController(
         vsync: this, duration: Duration(milliseconds: 2000));
 //    _animation = Tween(begin: 0, end: 1.0).animate(_controller);
-_animation = CurvedAnimation(parent: _controller, curve: Curves.bounceIn);
+_animation = CurvedAnimation(parent: _controller, curve: Curves.ease);
     Future(() {
       _controller
         ..addListener(() {

@@ -71,7 +71,7 @@ class _DotToMeAnimationState extends State<DotToMeAnimation>
     _controller =
         AnimationController(vsync: this, duration: Duration(seconds: 1));
     _curvedAnimation =
-        CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn)
+        CurvedAnimation(parent: _controller, curve: Curves.ease)
           ..addStatusListener((status) {
             if (status == AnimationStatus.completed) {
               // 动画完成

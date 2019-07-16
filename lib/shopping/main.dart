@@ -1,18 +1,34 @@
+import 'package:extended_text/extended_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/shopping/rich_text_demo.dart';
 import 'package:flutter_app/widget/custom_notification.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import 'dot_move_view.dart';
 import 'dot_to_me_animation_container.dart';
+import 'my_special_text_span_builder.dart';
 
 void main() => runApp(StartPage());
 
 class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+
+
     return MaterialApp(
-      home: MainPage(),
+      home: ExtendedText(
+        'fadfasfa', // 防止搜索检索的是最后一个关键词
+        maxLines: 2,
+//                        overflow: ExtendedTextOverflow.ellipsis,
+        specialTextSpanBuilder:
+        MySpecialTextSpanBuilder(),
+        style: TextStyle(
+            color: Color(0xff777777),
+            fontWeight: FontWeight.w600,
+            fontSize: 17),
+      )// MainPage(),
 //      routes: {
 //        "/": (_) => new WebviewScaffold(
 //          url: "http://qa.paat.org/app/appdetails?id=6&userId=2",
@@ -60,20 +76,20 @@ class _MainPageState extends State<MainPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       RenderBox renderBox = _shoppingCartKey.currentContext.findRenderObject();
-       setState(() {
-         _endOffset = renderBox.localToGlobal(Offset.zero);
-         _endSize = renderBox.size;
-       });
+      setState(() {
+        _endOffset = renderBox.localToGlobal(Offset.zero);
+        _endSize = renderBox.size;
+      });
     });
   }
 
   @override
   Widget build(BuildContext context) {
     List<Widget> goodsListWidget = [];
+    goodsListWidget.add(TextDemo());
     goodsList?.forEach((GoodsInfo goodsInfo) {
       if (goodsInfo.id == 1001) return;
 

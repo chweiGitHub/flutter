@@ -21,6 +21,8 @@ dependencies:
 #    path: ./custom_module
   custom_plugin:
     path: ./custom_plugin
+  mvp_module:
+    path: ./mvp_module
 
   flutter:
     sdk: flutter
@@ -42,6 +44,8 @@ dependencies:
   flutter_screenutil: ^0.5.2
   flutter_webview_plugin: ^0.3.5
   webview_flutter: ^0.3.10
+  extended_text: ^0.6.0
+  url_launcher: ^5.0.2
 
 dev_dependencies:
   flutter_test:

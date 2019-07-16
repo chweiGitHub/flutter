@@ -119,6 +119,7 @@ class _DotToMeAnimationState extends State<DotToMeAnimation>
     num top = startY + y * _curvedAnimation.value;
     num left = startX + x * _curvedAnimation.value;
 
+
     return Positioned(
       top: top,
       left: left,
