@@ -35,7 +35,7 @@ class BaseModel {
     if (getBaseParams() != null) {
       params.addAll(getBaseParams());
     }
-    Request.getRequest(url, params).then((Response res) {
+    Request.getRequest<J>(url, params).then((Response res) {
       _dealResult(res, callback, tag);
     });
   }

@@ -12,7 +12,7 @@ class Request {
   static final _host = ['https://ygyapp.paat.vip', 'https://ygyapp.paat.com'];
   static final _keys = [
     '9uxxPbd3jvgE4gTB1LD5RlDwKNj9eFBX',
-    '3nTLENo7TjAt1oGiTNWgwKtq5huk3Jom'
+    '---'
   ];
 
   static _getBaseUrl() {

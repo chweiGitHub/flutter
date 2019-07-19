@@ -73,11 +73,11 @@ class _WidgetPageState extends State<WidgetPage> with TickerProviderStateMixin {
 //            Offset offset = box.localToGlobal(Offset.zero);
 //            print("-======-----------------------------------------------------=======> ${offset.dx}---${offset.dy}");
 
-            // Navigator.of(context).pushNamed(value['route']);
-            print("widget_page 接收到发送的offset");
-            showConfirmDlg(context, Strings.receiveTaskConfirmInfo, () {
-              CustomNotification(offset, size).dispatch(context);
-            });
+             Navigator.of(context).pushNamed(value['route']);
+//            print("widget_page 接收到发送的offset");
+//            showConfirmDlg(context, Strings.receiveTaskConfirmInfo, () {
+//              CustomNotification(offset, size).dispatch(context);
+//            });
           },
           value: " ${i + 1}----${value['value']}",
         ),
