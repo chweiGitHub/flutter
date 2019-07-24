@@ -18,7 +18,7 @@ class TranslatePageRouter extends PageRouteBuilder {
   TranslatePageRouter(
     this.child, {
     this.type = TranslationalType.rightToLeft,
-    this.duration = const Duration(milliseconds: 500),
+    this.duration = const Duration(milliseconds: 50000),
   }) : super(
             transitionDuration: duration,
             pageBuilder: (BuildContext context, Animation<double> animation1,
@@ -39,7 +39,7 @@ class TranslatePageRouter extends PageRouteBuilder {
                 begin = const Offset(0.0, 1.0);
                 end = const Offset(0.0, 0.0);
               } else {
-                begin = const Offset(1.0, 0.0);
+                begin = const Offset(0.3, 0.0);
                 end = const Offset(0.0, 0.0);
               }
               Tween<Offset> _offsetTween = Tween<Offset>(

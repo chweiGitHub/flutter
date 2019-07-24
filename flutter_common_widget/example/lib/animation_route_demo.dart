@@ -1,3 +1,5 @@
+  
+import 'package:example/route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_common_widget/route_animation/scale_page_router.dart';
@@ -70,8 +72,21 @@ class AnimationRouteDemo extends StatelessWidget {
         ),
         title: Text("从右往左 "),
         onTap: () {
-          Navigator.of(context)
-              .push(TranslatePageRouter(DemoPage(showInfo: "从右往左")));
+//          Navigator.of(context)
+//              .push(TranslatePageRouter(DemoPage(showInfo: "从右往左")));
+        Navigator.of(context).push(CupertinoPageRouteV2(title:"bbb",builder: (c)=> DemoPage(), fullscreenDialog: false));
+        }
+      ),
+      ListTile(
+        trailing: Icon(
+          Icons.navigate_next,
+          color: Colors.green,
+        ),
+        title: Text("从右往左 official"),
+        onTap: () {
+//          Navigator.of(context)
+//              .push(TranslatePageRouter(DemoPage(showInfo: "从右往左")));
+          Navigator.of(context).push(CupertinoPageRoute(title:"aaa",builder: (c)=> DemoPage(), fullscreenDialog: false));
         },
       ),
       ListTile(

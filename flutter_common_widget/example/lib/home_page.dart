@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_common_widget/utils/index.dart';
 
 import 'animation_route_demo.dart';
+import 'ball_demo.dart';
 import 'button_demo.dart';
 import 'dlg_demo.dart';
 import 'shadow_demo.dart';
@@ -27,6 +28,7 @@ class _HomePageState extends State<HomePage> {
     {"name": "路由动画", "route": AnimationRouteDemo()},
     {"name": "阴影", "route": ShadowDemo()},
     {"name": "按钮", "route": ButtonDemo()},
+    {"name": "球体菜单", "route": BallDemo()},
   ];
 
   @override
