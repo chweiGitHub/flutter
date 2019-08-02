@@ -36,7 +36,7 @@ class BaseModel {
       params.addAll(getBaseParams());
     }
     Request.getRequest<J>(url, params).then((Response res) {
-      _dealResult(res, callback, tag);
+      dealResult(res, callback, tag);
     });
   }
 
@@ -47,7 +47,7 @@ class BaseModel {
       params.addAll(getBaseSignParams());
     }
     Request.getRequest(url, params).then((Response res) {
-      _dealResult(res, callback, tag);
+      dealResult(res, callback, tag);
     });
   }
 
@@ -59,7 +59,7 @@ class BaseModel {
       params.addAll(getBaseParams());
     }
     Request.postRequest(url, params).then((Response res) {
-      _dealResult(res, callback, tag);
+      dealResult(res, callback, tag);
     });
   }
 
@@ -71,7 +71,7 @@ class BaseModel {
       params.addAll(getBaseSignParams());
     }
     Request.postRequest(url, params).then((Response res) {
-      _dealResult(res, callback, tag);
+      dealResult(res, callback, tag);
     });
   }
 
@@ -79,7 +79,7 @@ class BaseModel {
   * 统一处理接口返回来的数据
   * 可以通过重写该方法来统一处理接口返回逻辑
   * */
-  void _dealResult(Response response, IModelCallback callback, tag) {
+  void dealResult(Response response, IModelCallback callback, tag) {
     if (response != null) {
 //      if (response.statusCode == 200) {
 //        if (callback != null) {

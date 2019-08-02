@@ -1,4 +1,16 @@
 
+# 封装抽取的常用控件 
+    1. 常用弹框： 确认框、提醒框、自定义Content弹框，底部弹框等。
+    2. 带阴影的view容器 ShadowContainer， 可设置阴影的扩散大小和颜色
+    3. 常用的路由转场动画，从左-->右，右-->左，下--上， 缩放，渐变等。 
+    4. 能获取位置和大小可点击的view容器，SizeButton 
+    5. 常见的输入框 及 相关的操作方式 
+    6. 屏幕适配util
+    7. 通知  CustomNotification
+    8. 好玩的view， （目前只有球体菜单的粗略实现，后续会补充动画、绘制相关的内容）
+    9. 关于使用，可单独运行example工程，查看里边的引用代码。 
+
+
 # 常用的第三方package :  
 ### 1. 网络请求 dio是一个强大的Dart Http请求库，支持Restful API、FormData、拦截器、请求取消、Cookie管理、文件上传/下载、超时、自定义适配器等...
 > 地址： https://github.com/flutterchina/dio/blob/master/README-ZH.md

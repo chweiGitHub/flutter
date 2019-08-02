@@ -23,6 +23,8 @@ dependencies:
     path: ./custom_plugin
   mvp_module:
     path: ./mvp_module
+  flutter_umengshare:
+    path: ./flutter_umengshare-0.1.17
 
   flutter:
     sdk: flutter
@@ -42,10 +44,11 @@ dependencies:
   flutter_markdown: ^0.2.0
   common_utils: ^1.1.1
   flutter_screenutil: ^0.5.2
-  flutter_webview_plugin: ^0.3.5
-  webview_flutter: ^0.3.10
+#  flutter_webview_plugin: ^0.3.5
+#  webview_flutter: ^0.3.10
   extended_text: ^0.6.0
   url_launcher: ^5.0.2
+#  flutter_umengshare: 0.1.16
 
 dev_dependencies:
   flutter_test:
@@ -65,7 +68,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-#  - assets/images/
+  - assets/images/
   - assets/fonts/
 
 

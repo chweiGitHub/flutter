@@ -2,8 +2,8 @@ import 'package:extended_text/extended_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/shopping/rich_text_demo.dart';
 import 'package:flutter_app/widget/custom_notification.dart';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+//import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
+//import 'package:webview_flutter/webview_flutter.dart';
 
 import 'dot_move_view.dart';
 import 'dot_to_me_animation_container.dart';
