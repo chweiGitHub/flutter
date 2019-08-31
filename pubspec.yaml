@@ -19,6 +19,8 @@ environment:
 dependencies:
 #  custom_module:
 #    path: ./custom_module
+  flutter_common_widget:
+    path: ./flutter_common_widget
   custom_plugin:
     path: ./custom_plugin
   mvp_module:
@@ -49,6 +51,8 @@ dependencies:
   extended_text: ^0.6.0
   url_launcher: ^5.0.2
 #  flutter_umengshare: 0.1.16
+  # 状态管理  provider https://pub.dev/packages/provider#-readme-tab-
+  provider: ^3.1.0
 
 dev_dependencies:
   flutter_test:
