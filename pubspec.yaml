@@ -25,8 +25,8 @@ dependencies:
     path: ./custom_plugin
   mvp_module:
     path: ./mvp_module
-  flutter_umengshare:
-    path: ./flutter_umengshare-0.1.17
+#  flutter_umengshare:
+#    path: ./flutter_umengshare-0.1.17
 
   flutter:
     sdk: flutter

@@ -25,6 +25,7 @@ class _BookListState extends State<BookList> {
   @override
   Widget build(BuildContext context) {
 //    print("build");
+  print("emdd. 我是build方法。。。");
     return Scaffold(
       appBar: AppBar(
         title: Text("stream demo"),
@@ -34,6 +35,8 @@ class _BookListState extends State<BookList> {
           stream: streamModel.stream,
           initialData: [],
           builder: (context, a) {
+            print("emdd.我是StreamBuilder的回调方法。 ") ;
+
             List<Widget> views = [];
             if (a.data != null && a.data.length > 0) {
               a.data.forEach((BookResponseData data) {

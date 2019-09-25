@@ -98,7 +98,7 @@ class AnimationRouteDemo extends StatelessWidget {
         onTap: () {
           Navigator.of(context).push(
             TranslatePageRouter(DemoPage(showInfo: "从下往上"),
-                type: TranslationalType.bottomToTop),
+                type: TranslationalType.rightToLeft),
           );
         },
       ),

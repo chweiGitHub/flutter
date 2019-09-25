@@ -28,7 +28,7 @@ class _State extends State<TestPage> {
   List<Uint8List> imageDataList = [];
 
   @override
-  Widget build(BuildContext context) { _screenShotKey.currentContext.findRenderObject()
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("截图保存到本地demo"),
