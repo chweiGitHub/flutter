@@ -53,6 +53,9 @@ dependencies:
 #  flutter_umengshare: 0.1.16
   # 状态管理  provider https://pub.dev/packages/provider#-readme-tab-
   provider: ^3.1.0
+  camera: any
+  path_provider: ^0.5.0
+  video_player: ^0.10.0
 
 dev_dependencies:
   flutter_test:

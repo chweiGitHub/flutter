@@ -6,6 +6,8 @@ import 'package:flutter_app/page/main_page.dart';
 import 'package:flutter_app/page/text_field_note.dart';
 import 'package:flutter_app/theme.dart';
 
+import 'camera/demo.dart';
+
 void main() => runApp(StartApp());
 
 class StartApp extends StatelessWidget {
@@ -18,7 +20,7 @@ class StartApp extends StatelessWidget {
       // 配置路由表
       routes: <String, WidgetBuilder>{
         // 默认初始页面
-        "/": (_) => MainPage(),
+        "/": (_) => CameraApp(),//MainPage(),
         "/login": (_) => LoginPage(),
         "/text_field_note": (_) => TextFieldNote(),
         "/list_view_note":(_)=> ListViewNote(),
