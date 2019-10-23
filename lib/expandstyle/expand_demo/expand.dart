@@ -33,7 +33,7 @@ class _MainPageState extends State<MainPage> {
                 right: 0,
                 child: ExpandView(
                   expandViewType: ExpandViewType.EXPAND_TOP_TO_BOTTOM,
-                  color: Colors.deepOrange,
+                  color: Colors.white,
                   radius: BorderRadius.all(Radius.circular(10.0)),
                 ),
                 top: 20.0,
@@ -53,6 +53,7 @@ class _MainPageState extends State<MainPage> {
     );
   }
 }
+
 /// 抽屉Widget : 可向上展开，向下展开，上下同时展开
 /// todo : titleView,contentView,footView从外部传入
 class ExpandView extends StatefulWidget {
@@ -60,13 +61,19 @@ class ExpandView extends StatefulWidget {
   final BorderRadiusGeometry radius;
   final Color color;
   final Function expandStateChange;
+  Widget contentView;
+  Widget topView;
+  Widget footerView;
 
-  const ExpandView(
+  ExpandView(
       {Key key,
       this.expandViewType = ExpandViewType.EXPAND_TOP_TO_BOTTOM,
       this.radius,
       this.color,
-      this.expandStateChange})
+      this.expandStateChange,
+      this.contentView,
+      this.topView,
+      this.footerView})
       : super(key: key);
 
   @override
@@ -132,14 +139,35 @@ class _ExpandViewState extends State<ExpandView>
 
   @override
   Widget build(BuildContext context) {
+    Widget contentView = widget.contentView ??
+        Container(
+          child: Text("content"),
+          color: Colors.redAccent,
+          height: 100,
+        );
+    Widget topView = widget.topView ??
+        Container(
+          alignment: Alignment.center,
+          child: Text("header"),
+          color: Colors.lightBlue,
+          height: 30,
+        );
+    Widget footerView = widget.footerView ??
+        Container(
+          alignment: Alignment.center,
+          child: Text("footer"),
+          color: Colors.lightBlue,
+          height: 30,
+        );
     Widget contentSubView;
     if (widget.expandViewType == ExpandViewType.EXPAND_TOP_TO_BOTTOM) {
       contentSubView = Positioned(
         left: 0,
         right: 0,
         top: contentTop,
-        child: ContentView(
+        child: Container(
           key: _contentKey,
+          child: contentView,
         ),
       );
     } else if (widget.expandViewType == ExpandViewType.EXPAND_BOTTOM_TO_TOP) {
@@ -147,16 +175,18 @@ class _ExpandViewState extends State<ExpandView>
         left: 0,
         right: 0,
         bottom: contentTop,
-        child: ContentView(
+        child: Container(
           key: _contentKey,
+          child: contentView,
         ),
       );
     } else {
       contentSubView = Positioned(
         left: 0,
         right: 0,
-        child: ContentView(
+        child: Container(
           key: _contentKey,
+          child: contentView,
         ),
       );
     }
@@ -177,8 +207,10 @@ class _ExpandViewState extends State<ExpandView>
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            TitleView(
+            Container(
               key: _titleKey,
+              child: Center(child: topView),
+              alignment: Alignment.center,
             ),
             Stack(alignment: Alignment.center, children: <Widget>[
               Container(
@@ -186,8 +218,9 @@ class _ExpandViewState extends State<ExpandView>
               ),
               contentSubView,
             ]),
-            FooterView(
+            Container(
               key: _footKey,
+              child: footerView,
             ),
           ],
         ),
